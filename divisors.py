@@ -3,10 +3,6 @@
 import math
 import time
 
-num = int(input("Enter a number: "))
-
-
-dividend = math.floor(math.sqrt(num))
 
 def divisor(num, dividend):
     divisorList = []
@@ -33,21 +29,24 @@ def divisor2(num):
 
 
 
-start = time.time_ns()
-divisor(num, dividend)
-stop = time.time_ns()
+if __name__ == "__main__":
+    num = int(input("Enter a number: "))
+    dividend = math.floor(math.sqrt(num))
 
-print(f"Function divisor took {(stop - start) // 1000} msec to complete")
+    start = time.time_ns()
+    divisorList = divisor(num, dividend)
+    stop = time.time_ns()
 
-start = time.time_ns()
-divisor2(num)
-stop = time.time_ns()
+    print(f"Function divisor took {(stop - start) // 1000} msec to complete")
 
-print(f"Function divisor2 took {(stop - start) // 1000} msec to complete")
+    start = time.time_ns()
+    divisorList2 = divisor2(num)
+    stop = time.time_ns()
 
+    print(f"Function divisor2 took {(stop - start) // 1000} msec to complete")
 
-#print(divisorList)
-#print(divisorList2)
+    print(divisorList)
+    print(divisorList2)
 
-#print(divisorList == divisorList2)
+    #print(divisorList == divisorList2)
 
