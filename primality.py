@@ -20,7 +20,7 @@ def isPrime2(num):
     if num < 2:
         return False
     elif num % 2 == 0 and num != 2:
-        return True
+        return False
 
     for n in range(2, math.ceil(math.sqrt(num))):
         if num % n == 0:
@@ -29,9 +29,10 @@ def isPrime2(num):
     return True
 
 
-num = int(input("Enter a number: "))
+if __name__ == '__main__':
+    num = int(input("Enter a number: "))
 
-if isPrime2(num):
-    print(f"{num} is a prime number")
-else:
-    print(f"{num} is not a prime number")
+    if isPrime2(num):
+        print(f"{num} is a prime number")
+    else:
+        print(f"{num} is not a prime number")
